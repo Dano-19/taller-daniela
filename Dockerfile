@@ -1,13 +1,14 @@
-# Imagen base oficial de Python
 FROM python:3.10-slim
 
-# Etiqueta con tu nombre
 LABEL maintainer="daniela-cardenas"
 
-# Copiar los archivos al contenedor
 WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
 COPY daniela.py .
 
+EXPOSE 8080
 
-# Comando por defecto al ejecutar el contenedor
 CMD ["python", "daniela.py"]

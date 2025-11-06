@@ -24,7 +24,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          # IMPORTANTE: Esta es la URL de tu imagen. 
-          # Asegúrate de usar el path de tu repositorio en GitHub.
           tags: ghcr.io/${{ github.repository }}/daniela-app:latest
           context: .
