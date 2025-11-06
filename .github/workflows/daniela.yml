@@ -9,6 +9,10 @@ jobs:
   build_and_publish:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      packages: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,5 +28,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ghcr.io/dano-19/daniela-app:latest
-          context: .
+          tags: ghcr.io/dano-19/daniela-app:1.0.0
